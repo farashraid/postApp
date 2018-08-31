@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-clothes-select',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClothesSelectComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {
+
+  }
 
   ngOnInit() {
+    // this.gender = this.route.paramMap.pipe(
+    //   switchMap((params: ParamMap) =>
+    //     this.service.getHero(params.get('id')))
+    // );
+    let id = this.route.snapshot.paramMap.get('id');
+    console.log(id,'345')
   }
 
 }

@@ -8,6 +8,13 @@ import { ClothesSelectComponent } from './clothes-select/clothes-select.componen
 import { BackgroundSelectComponent } from './background-select/background-select.component';
 import { GenderSelectComponent } from './gender-select/gender-select.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'home/:id', component:  GenderSelectComponent},
+  { path: 'clothes',      component:  ClothesSelectComponent},
+  { path: '**', component: GenderSelectComponent }
+];
 
 @NgModule({
   declarations: [
@@ -20,6 +27,10 @@ import { AppRoutingModule } from './/app-routing.module';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
     // AppRoutingModule
   ],
   providers: [],

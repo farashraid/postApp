@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -11,4 +11,52 @@
 <body>
   <app-root></app-root>
 </body>
+</html> -->
+<html lang="zh-CN">
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="description" content="" />
+    <meta name="Keywords" content="" />
+    <title id="title">h5Post</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="/src/assets/lib/adaptive-version3.js"></script>
+    <script>
+        window['adaptive'].desinWidth = 750;
+        window['adaptive'].baseFont = 18;
+        window['adaptive'].maxWidth = 480;
+        window['adaptive'].init();
+    </script>
+    <style type="text/css">
+        .div-1px {
+            width: 80%;
+            height: 4rem; 
+            margin: 1rem auto;
+            border: 1px solid #333;
+        }
+        .hairlines .div-1px {
+            border: .5px solid #0a55bc;
+        }
+    </style>
+</head>
+<body>
+    <app-root></app-root>
+</body>
+<script>
+(function() {
+    var isIPhone = !!window.navigator.appVersion.match(/iphone/gi);
+    if (isIPhone && devicePixelRatio === 2) {
+        var testElem = document.createElement('div');
+        testElem.style.border = '.5px solid transparent';
+        document.body.appendChild(testElem);
+        if (testElem.offsetHeight == 1)
+        {
+            document.querySelector('html').classList.add('hairlines');
+        }
+        document.body.removeChild(testElem);
+    }
+})();
+</script>
 </html>

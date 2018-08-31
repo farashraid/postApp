@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-gender-select',
   templateUrl: './gender-select.component.html',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GenderSelectComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {
 
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    
+  }
+  toggleImage(id){
+    this.router.navigate( ['clothes', { id:id }] );
+  }
 }
