@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="content" *ngIf="id == 'clothes'">
-      <div class="img-name" *ngFor="let index of showArr" (click)="select(index.id)">
+      <div class="img-name" *ngFor="let index of showArr;let i=index" (click)="change(index.src,i)">
           <!-- <img src="../../assets/jew/jew (1).png" alt=""> -->
           <img [src]="index.src" alt="">
         </div>

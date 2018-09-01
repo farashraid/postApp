@@ -15,12 +15,9 @@ export class ClothesSelectComponent implements OnInit {
   ) {
 
   }
-
+  private faList;
+  
   ngOnInit() {
-    // this.gender = this.route.paramMap.pipe(
-    //   switchMap((params: ParamMap) =>
-    //     this.service.getHero(params.get('id')))
-    // );
     let id = this.route.snapshot.paramMap.get('id');
     console.log(id,'345')
   }
@@ -30,4 +27,8 @@ export class ClothesSelectComponent implements OnInit {
   toSelectBg(){
     this.router.navigate( ['bgSelect'] );
   }
+  getInfoFromChild1(data){
+    this.faList= data;
+    console.log(data,'jsljflsfjslfjsdlfj l')
+    }
 }

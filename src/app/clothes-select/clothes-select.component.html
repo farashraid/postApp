@@ -5,13 +5,13 @@
   <div class="middle">
     <div class="left">
         <div class="select">
-            <app-select-input></app-select-input>
+            <app-select-input (eventChild1) = "getInfoFromChild1($event)"></app-select-input>
           </div>
     </div>
     
     <div class="right">
         <div class="person">
-          <app-person></app-person>
+          <app-person  [child2] = "faList"></app-person>
         </div>
         <div class="botton">
           <div class="left-btn" (click)="back()"><img src="../../assets/btn/f-back.png" alt=""></div>

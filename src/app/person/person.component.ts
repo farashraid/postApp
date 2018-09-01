@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 
 @Component({
   selector: 'app-person',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./person.component.less']
 })
 export class PersonComponent implements OnInit {
-
+  @Input()
+  private child2:any;
   constructor() { }
 
   ngOnInit() {
   }
-
+  
 }
