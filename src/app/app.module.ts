@@ -9,10 +9,12 @@ import { BackgroundSelectComponent } from './background-select/background-select
 import { GenderSelectComponent } from './gender-select/gender-select.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
+import { BgSelectInputComponent } from './bg-select-input/bg-select-input.component';
 
 const appRoutes: Routes = [
   { path: 'home/:id', component:  GenderSelectComponent},
-  { path: 'clothes',      component:  ClothesSelectComponent},
+  { path: 'clothes', component:  ClothesSelectComponent},
+  { path: 'bgSelect', component:  BackgroundSelectComponent},
   { path: '**', component: GenderSelectComponent }
 ];
 
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
     SelectInputComponent,
     ClothesSelectComponent,
     BackgroundSelectComponent,
-    GenderSelectComponent
+    GenderSelectComponent,
+    BgSelectInputComponent
   ],
   imports: [
     BrowserModule,

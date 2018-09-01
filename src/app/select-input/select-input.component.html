@@ -1,22 +1,34 @@
 <div class="select">
-  <div class="content">
-    <div class="img-name">
+  <div class="content" *ngIf=" id == 'top1'">
+    <div class="img-name" (click)="select(clothesArr.hairArr)">
       <img src="../../assets/btn/select-1.png" alt="">
     </div>
-    <div class="img-name">
+    <div class="img-name" (click)="select(clothesArr.jewArr)">
       <img src="../../assets/btn/select-2.png" alt="">
     </div>
-    <div class="img-name">
+    <div class="img-name" (click)="select(clothesArr.coatArr)"> 
       <img src="../../assets/btn/select-3.png" alt="">
     </div>
-    <div class="img-name">
+    <div class="img-name" (click)="select(clothesArr.suitsArr)"> 
       <img src="../../assets/btn/select-4.png" alt="">
     </div>
-    <div class="img-name">
+    <div class="img-name" (click)="select(clothesArr.pantsArr)">
       <img src="../../assets/btn/select-5.png" alt="">
     </div>
-    <div class="img-name">
+    <div class="img-name" (click)="select(clothesArr.shoesArr)">
       <img src="../../assets/btn/select-6.png" alt="">
     </div>
   </div>
-</div>
+  <div class="content" *ngIf="id == 'clothes'">
+      <div class="img-name" *ngFor="let index of showArr" (click)="select(index.id)">
+          <!-- <img src="../../assets/jew/jew (1).png" alt=""> -->
+          <img [src]="index.src" alt="">
+        </div>
+        <div class="img-name" (click)=" id = 'top1'">
+          <img src="../../assets/btn/f-back.png" alt="">
+        </div>
+    </div>
+  </div>
+
+
+ 

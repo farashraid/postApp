@@ -24,5 +24,10 @@ export class ClothesSelectComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     console.log(id,'345')
   }
-
+  back(){
+    this.router.navigate( ['home'] );
+  }
+  toSelectBg(){
+    this.router.navigate( ['bgSelect'] );
+  }
 }
