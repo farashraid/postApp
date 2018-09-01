@@ -29,6 +29,6 @@ export class ClothesSelectComponent implements OnInit {
   }
   getInfoFromChild1(data){
     this.faList= data;
-    console.log(data,'jsljflsfjslfjsdlfj l')
+    console.log(data)
     }
 }

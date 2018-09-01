@@ -10,7 +10,7 @@ export class SelectInputComponent implements OnInit {
   id:any = 'top1';
   clothesArr:any= [];
   showArr:any= [];
-  eventChild1= new EventEmitter();
+  @Output() eventChild1= new EventEmitter();
 
   constructor() { }
 
@@ -126,21 +126,19 @@ export class SelectInputComponent implements OnInit {
   select(param){
     this.showArr = param;
     this.id = 'clothes';
-    // console.log(this.id)
   }
   change(src,i){
-    console.log(i)
     const obj = {
       src:'',
-      index:''
+      // index:''
     }
     if(src.includes('hair')){
       obj.src = src;
-      obj.index = i;
-      this.eventChild1.emit(obj) 
-      console.log(obj)
+      // obj.index = i;
+      this.eventChild1.emit(obj);
     }else if(src.includes('jew')){
 
     }
   }
+  
 }

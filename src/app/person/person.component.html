@@ -1,10 +1,9 @@
 <div class="main">
   <div class="person">
-    <div class="hair">
-        {{child2}}
-        {{child2}}
-        {{child2}}
-    </div>
+    <div class="hair" *ngIf="child2" >
+      </div> 
+    <!-- <div [ngClass]="{'hair1': child2.index==1,'hair2': child2.index==2}" >
+    </div> -->
     <!-- <div class="pants"></div>
     <div class="coats"></div>
     <div class="jew"></div>

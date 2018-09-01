@@ -7,10 +7,12 @@ import { Component, OnInit , Input } from '@angular/core';
 })
 export class PersonComponent implements OnInit {
   @Input()
-  private child2:any;
+  private child2;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.child2)
+   
   }
-  
+
 }
