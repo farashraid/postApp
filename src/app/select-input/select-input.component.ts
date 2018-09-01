@@ -10,6 +10,32 @@ export class SelectInputComponent implements OnInit {
   id:any = 'top1';
   clothesArr:any= [];
   showArr:any= [];
+  public obj: Wear = {
+    hair:{
+      has:true,
+      index:0,
+    },
+    jew:{
+      has:false,
+      index:0,
+    },
+    coat:{
+      has:true,
+      index:0,
+    },
+    suits:{
+      has:false,
+      index:0,
+    },
+    pants:{
+      has:true,
+      index:0,
+    },
+    shoes:{
+      has:true,
+      index:0,
+    }
+  };
   @Output() eventChild1= new EventEmitter();
 
   constructor() { }
@@ -126,19 +152,63 @@ export class SelectInputComponent implements OnInit {
   select(param){
     this.showArr = param;
     this.id = 'clothes';
+    console.log(param,'param')
   }
   change(src,i){
-    const obj = {
-      src:'',
-      // index:''
-    }
+    // const obj = ['','','']
+    console.log(src,i,'===obj')
     if(src.includes('hair')){
-      obj.src = src;
-      // obj.index = i;
-      this.eventChild1.emit(obj);
-    }else if(src.includes('jew')){
-
+      this.obj.hair.has = true;//obj的第一位是种类的意思
+      this.obj.hair.index = i+1; //obj第二位是第几件衣服的意思
+      this.eventChild1.emit(this.obj);
     }
+     if(src.includes('coat')){
+      this.obj.coat.has = true;
+      this.obj.coat.index = i+1;
+      this.eventChild1.emit(this.obj);
+    }
+     if(src.includes('suits')){
+      this.obj.suits.has = true;
+      this.obj.suits.index = i+1;
+      this.eventChild1.emit(this.obj);
+    }
+     if(src.includes('pants')){
+      this.obj.pants.has = true;
+      this.obj.pants.index = i+1;
+      this.eventChild1.emit(this.obj);
+    }
+     if(src.includes('shoes')){
+      this.obj.shoes.has = true;
+      this.obj.shoes.index = i+1;
+      this.eventChild1.emit(this.obj);
+    }
+    
   }
   
+}
+class Wear{
+  hair:{
+    has:boolean,
+    index:number,
+  }
+  jew:{
+    has:boolean,
+    index:number,
+  }
+  coat:{
+    has:boolean,
+    index:number,
+  }
+  suits:{
+    has:boolean,
+    index:number,
+  }
+  pants:{
+    has:boolean,
+    index:number,
+  }
+  shoes:{
+    has:boolean,
+    index:number,
+  }
 }

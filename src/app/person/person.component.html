@@ -1,7 +1,20 @@
 <div class="main">
   <div class="person">
-    <div class="hair" *ngIf="child2" >
-      </div> 
+    <div *ngIf="personObj.hair.has">
+        <div class="hair" [ngStyle]="{'background-image': 'url(' + '../../assets/hair/fhair'+ personObj.hair.index + '.png'+ ')'}"></div>
+     </div>
+     <div *ngIf="personObj.coat.has">
+        <div class="coats" [ngStyle]="{'background-image': 'url(' + '../../assets/coat/fcoats'+ personObj.coat.index + '.png'+ ')'}"></div>
+     </div>
+    
+
+        <!-- <div class="hair1" *ngIf="child2[1] == 0 " >
+        </div> 
+        <div class="hair2" *ngIf="child2[1] == 1 " >
+          </div>  -->
+
+
+    
     <!-- <div [ngClass]="{'hair1': child2.index==1,'hair2': child2.index==2}" >
     </div> -->
     <!-- <div class="pants"></div>
