@@ -1,4 +1,4 @@
-import { Component, OnInit , Input } from '@angular/core';
+import { Component, OnInit , Input, OnChanges, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'app-person',
@@ -43,11 +43,10 @@ export class PersonComponent implements OnInit {
       }
     };
   }
-  ngOnChanges( child2:Wear) {
-    
+  ngOnChanges( changes: SimpleChange) { 
     this.personObj = this.child2;
-    
-    // console.log( this.personObj,'suits==================')
+  }
+  ngDoCheck():void{
     if(this.personObj){
       if(this.personObj.click == 'suits'){
         this.personObj.coat.has = false;
@@ -69,7 +68,6 @@ export class PersonComponent implements OnInit {
       console.log('数据变化了')
     }
      
-    this.suits();
   }
   suits(){
   
