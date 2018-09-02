@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter  } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter  } from '@angular/core';
 
 @Component({
   selector: 'app-select-input',
@@ -12,11 +12,12 @@ export class SelectInputComponent implements OnInit {
   showArr:any= [];
   public obj: Wear;
   @Output() eventChild1= new EventEmitter();
-
+  @Input() gender:number;//1为女生 ，2 为男生
   constructor() { }
 
   ngOnInit() {
     this.obj = {
+      gender:this.gender,
       click:'hair',
       hair:{
         has:true,
@@ -212,6 +213,7 @@ export class SelectInputComponent implements OnInit {
   
 }
 class Wear{
+  gender:number;
   click:string;
   hair:{
     has:boolean,

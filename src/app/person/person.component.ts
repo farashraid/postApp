@@ -9,11 +9,13 @@ export class PersonComponent implements OnInit {
   @Input() bgData;
   // private child2;
   @Input() child2: Wear;
+  @Input() gender: number;
   private personObj:Wear;
   constructor() { }
 
   ngOnInit() {
     this.personObj =  {
+      gender:this.gender,
       click:'hair',
       hair:{
         has:true,
@@ -47,6 +49,7 @@ export class PersonComponent implements OnInit {
     this.personObj = this.child2;    
   }
   ngDoCheck():void{
+    console.log(this.personObj.gender,'gender--->')
     if(this.bgData){
       console.log(this.bgData,'背景选择组建的数据==========')
       this.personObj = this.bgData;
@@ -81,6 +84,7 @@ export class PersonComponent implements OnInit {
 
 }
 class Wear{
+  gender:number;
   click:string;
   hair:{
     has:boolean,

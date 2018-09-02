@@ -21,7 +21,12 @@
   </div>
   <div class="content" *ngIf="id == 'clothes'">
       <div class="img-name" (click)=" id = 'top1'">
-          <img src="../../assets/btn/f-back.png" alt="">
+          <div *ngIf="obj.gender == 1">
+              <img src="../../assets/btn/f-back.png" alt="">
+          </div>
+          <div *ngIf="obj.gender == 2">
+              <img src="../../assets/btn/m-back.png" alt="">
+            </div>
         </div>
       <div class="img-name" *ngFor="let index of showArr;let i=index" (click)="change(index.src,i)">
           <!-- <div class="img-name" *ngFor="let index of showArr;let i=index" (click)="change()"> -->
@@ -29,7 +34,12 @@
           <img [src]="index.src" alt="">
         </div>
         <div class="img-name" (click)=" id = 'top1'">
-          <img src="../../assets/btn/f-back.png" alt="">
+          <div *ngIf="obj.gender == 1">
+              <img src="../../assets/btn/f-back.png" alt="">
+          </div>
+          <div *ngIf="obj.gender == 2">
+              <img src="../../assets/btn/m-back.png" alt="">
+            </div>
         </div>
     </div>
   </div>

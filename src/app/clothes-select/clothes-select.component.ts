@@ -19,7 +19,7 @@ export class ClothesSelectComponent implements OnInit {
   private id;
   private str;
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('id');//获取性别
 //var str=encodeURI(JSON.stringify(data));
   }
   back(){
