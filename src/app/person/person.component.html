@@ -12,8 +12,33 @@
         <div class="shoes"  [style.background-image]="'url(' + '../../assets/shoes/fshoes'+ personObj.shoes.index + '.png'+ ')'"></div>
     </div>
     <div *ngIf="personObj.suits.has">
-      {{this.personObj.suits.has}}
-      <div class="suits" [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div>
+      <div [ngSwitch]="personObj.suits.index">
+      <div *ngSwitchCase="4">
+          <div class="suits"
+          [style.top] = "'-0.3rem'" 
+          [style.width] =" '102%' "
+          [style.marginLeft] =" '-0.1rem' "
+           [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
+      </div>
+      <div *ngSwitchCase="5">
+          <div class="suits"
+          [style.top] = "'-0.3rem'" 
+          [style.width] =" '102%' "
+          [style.marginLeft] =" '-0.1rem' "
+           [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
+      </div>
+      <div *ngSwitchCase="6">
+          <div class="suits"
+          [style.top] = "'-0.3rem'" 
+          [style.width] =" '102%' "
+          [style.marginLeft] =" '-0.1rem' "
+           [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
+        </div>
+      <div *ngSwitchDefault>
+          <div class="suits" [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
+      </div>
+      </div>
+     
     </div>
 
     <div *ngIf="personObj.coat.has">
@@ -22,6 +47,9 @@
      </div>
      <div *ngIf="personObj.pants.has">
         <div class="pants" [style.background-image]="'url(' + '../../assets/pants/fpants'+ personObj.pants.index + '.png'+ ')'"></div>
+    </div>
+    <div *ngIf="personObj.jew.has">
+        <div class="jew" [style.background-image]="'url(' + '../../assets/jew/fjew'+ personObj.jew.index + '.png'+ ')'"></div>
     </div>
 <!-- 
     <div *ngIf="personObj.click == 'coat'">

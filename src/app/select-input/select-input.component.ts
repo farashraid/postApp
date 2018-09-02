@@ -201,6 +201,12 @@ export class SelectInputComponent implements OnInit {
       this.obj.shoes.index = i+1;
       this.eventChild1.emit(this.obj);
     }
+    if(src.includes('jew')){
+      this.obj.click = 'jew';
+      this.obj.jew.has = true;
+      this.obj.jew.index = i+1;
+      this.eventChild1.emit(this.obj);
+    }
     
   }
   
