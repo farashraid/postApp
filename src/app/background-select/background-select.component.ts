@@ -40,7 +40,8 @@ export class BackgroundSelectComponent implements OnInit {
     console.log(data,'bgbgbgbgbgbgbgbgbgbgbgbgbg')
   }
   backClothes(){
-    this.router.navigate( ['clothes'] );
+    const obj = encodeURI(JSON.stringify(this._str));
+    this.router.navigate( ['clothes'],{queryParams:{'id':this.id,'obj':obj,'url':'bg'}} );
   }
   bornPost(){
     this.getPost = true;

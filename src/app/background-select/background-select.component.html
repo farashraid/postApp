@@ -20,21 +20,42 @@
   <div class="select-input">
     <div *ngIf="!getPost">
         <div class="left-btn" (click)="backClothes()">
-            <img src="../../assets/btn/f-back.png" alt="">
+            <div *ngIf="id == 1">
+                <img src="../../assets/btn/f-back.png" alt="">
+            </div>
+            <div *ngIf="id == 2">
+                <img src="../../assets/btn/m-back.png" alt="">
+            </div>
           </div>
           <div class="bg-slide">
             <app-bg-select-input (eventbg)="getInfoFromBg($event)"></app-bg-select-input>
           </div>
           <div class="right-btn" (click)="bornPost()">
-            <img src="../../assets/btn/f-born.png" alt="">
+              <div *ngIf="id == 1">
+                  <img src="../../assets/btn/f-born.png" alt="">
+              </div>
+              <div *ngIf="id == 2">
+                  <img src="../../assets/btn/m-born.png" alt="">
+              </div>
           </div>
     </div>
     <div *ngIf="getPost">
-        <div class="back-btn">
-          <img src="../../assets/btn/f-back.png" alt="">
+        <div class="back-btn" (click)="backClothes()">
+            <div *ngIf="id == 1">
+                <img src="../../assets/btn/f-back.png" alt="">
+            </div>
+            <div *ngIf="id == 2">
+                <img src="../../assets/btn/m-back.png" alt="">
+            </div>
+          
         </div>
         <div class="born-btn">
-            <img src="../../assets/btn/f-save.png" alt="">
+            <div *ngIf="id == 1">
+                <img src="../../assets/btn/f-save.png" alt="">
+            </div>
+            <div *ngIf="id == 2">
+                <img src="../../assets/btn/m-save.png" alt="">
+            </div>
         </div>
     </div>
   </div>

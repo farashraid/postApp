@@ -15,20 +15,31 @@ export class ClothesSelectComponent implements OnInit {
   ) {
 
   }
-  private faList;
-  private id;
-  private str;
+  private faList;//下滑列表传递到person的参数
+  private id;//性别
+  private str;//对象
+  private url;//url
+
+
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');//获取性别
+
+    this.route.queryParams.subscribe(params => {
+      this.id = params['id'];
+      this.str = params['obj'];
+      this.url = params['url'];
+    });
+    if(this.url == 'bg'){
+      this.faList = JSON.parse(decodeURI(this.str));
+    }else if(this.url == 'home'){
+
+    }
   }
   back(){
     this.router.navigate( ['home'] );
   }
   toSelectBg(){
-    console.log(encodeURI(JSON.stringify(this.faList)),'stringifystringifystringify')
-    this.str = encodeURI(JSON.stringify(this.faList));
-    // this.router.navigate( ['bgSelect', { id:this.id }] );//传多个参数
-    this.router.navigate( ['bgSelect'],{queryParams:{'id':this.id,'obj':this.str}} );
+     const str = encodeURI(JSON.stringify(this.faList));
+    this.router.navigate( ['bgSelect'],{queryParams:{'id':this.id,'obj':str,'url':'clo'}} );
   }
   getInfoFromChild1(data){
     this.faList= data;

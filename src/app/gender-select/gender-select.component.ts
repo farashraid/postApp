@@ -18,6 +18,6 @@ export class GenderSelectComponent implements OnInit {
     
   }
   toggleImage(id){
-    this.router.navigate( ['clothes', { id:id }] );
+    this.router.navigate( ['clothes'],{queryParams:{'id':id,'obj':'','url':'home'}} );
   }
 }
