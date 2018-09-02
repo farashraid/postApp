@@ -4,7 +4,14 @@
   </div>
   <div class="middle">
     <div class="white" [style.background-image]="'url(' + '../../assets/background/bg'+ bgImgNumber + '.jpg'+ ')'">
-      <input type="text"  #box (keyup)="onKey(box.value)">
+      <!-- <input type="text"  #box (keyup)="onKey(box.value)"> -->
+      <div *ngIf="!getPost">
+          <input type="text"  #box (keyup)="onKey(box.value)">
+      </div>
+      <div *ngIf="getPost">
+          <input type="text"  [value]="name" disabled>
+      </div>
+      <div class="erwei" *ngIf="getPost"></div>
       <div class="person">
         <app-person [bgData] = '_str'></app-person>
       </div>
@@ -18,7 +25,7 @@
           <div class="bg-slide">
             <app-bg-select-input (eventbg)="getInfoFromBg($event)"></app-bg-select-input>
           </div>
-          <div class="right-btn">
+          <div class="right-btn" (click)="bornPost()">
             <img src="../../assets/btn/f-born.png" alt="">
           </div>
     </div>

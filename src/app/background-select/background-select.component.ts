@@ -10,7 +10,7 @@ export class BackgroundSelectComponent implements OnInit {
   private str;//人物衣服的对象
   private _str;//解码后的对象
   private bgImgNumber = 1;//背景图的bg
-  private getPost:boolean=true;//生成海报
+  private getPost:boolean=false;//生成海报
   private name:string;
   
   constructor(
@@ -46,6 +46,7 @@ export class BackgroundSelectComponent implements OnInit {
     this.getPost = true;
   }
   onKey(value: string) {
+    this.name = value
     console.log(value,'名字');
   }
 }
