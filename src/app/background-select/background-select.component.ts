@@ -10,6 +10,8 @@ export class BackgroundSelectComponent implements OnInit {
   private str;//人物衣服的对象
   private _str;//解码后的对象
   private bgImgNumber = 1;//背景图的bg
+  private getPost:boolean=true;//生成海报
+  private name:string;
   
   constructor(
     private route: ActivatedRoute,
@@ -17,6 +19,7 @@ export class BackgroundSelectComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.name = '';
     // this.id = this.route.snapshot.paramMap.get('id');
 
     this.route.queryParams.subscribe(params => {
@@ -38,5 +41,11 @@ export class BackgroundSelectComponent implements OnInit {
   }
   backClothes(){
     this.router.navigate( ['clothes'] );
+  }
+  bornPost(){
+    this.getPost = true;
+  }
+  onKey(value: string) {
+    console.log(value,'名字');
   }
 }

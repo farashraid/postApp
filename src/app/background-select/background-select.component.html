@@ -4,21 +4,31 @@
   </div>
   <div class="middle">
     <div class="white" [style.background-image]="'url(' + '../../assets/background/bg'+ bgImgNumber + '.jpg'+ ')'">
-      <input type="text">
+      <input type="text"  #box (keyup)="onKey(box.value)">
       <div class="person">
         <app-person [bgData] = '_str'></app-person>
       </div>
     </div>
   </div>
   <div class="select-input">
-    <div class="left-btn" (click)="backClothes()">
-      <img src="../../assets/btn/f-back.png" alt="">
+    <div *ngIf="!getPost">
+        <div class="left-btn" (click)="backClothes()">
+            <img src="../../assets/btn/f-back.png" alt="">
+          </div>
+          <div class="bg-slide">
+            <app-bg-select-input (eventbg)="getInfoFromBg($event)"></app-bg-select-input>
+          </div>
+          <div class="right-btn">
+            <img src="../../assets/btn/f-born.png" alt="">
+          </div>
     </div>
-    <div class="bg-slide">
-      <app-bg-select-input (eventbg)="getInfoFromBg($event)"></app-bg-select-input>
-    </div>
-    <div class="right-btn">
-      <img src="../../assets/btn/f-born.png" alt="">
+    <div *ngIf="getPost">
+        <div class="back-btn">
+          <img src="../../assets/btn/f-back.png" alt="">
+        </div>
+        <div class="born-btn">
+            <img src="../../assets/btn/f-save.png" alt="">
+        </div>
     </div>
   </div>
   <div class="bottom">
