@@ -6,16 +6,16 @@
     <div class="white">
       <input type="text">
       <div class="person">
-        <app-person></app-person>
+        <app-person [bgData] = '_str'></app-person>
       </div>
     </div>
   </div>
   <div class="select-input">
-    <div class="left-btn">
+    <div class="left-btn" (click)="backClothes()">
       <img src="../../assets/btn/f-back.png" alt="">
     </div>
     <div class="bg-slide">
-      <app-bg-select-input></app-bg-select-input>
+      <app-bg-select-input ></app-bg-select-input>
     </div>
     <div class="right-btn">
       <img src="../../assets/btn/f-born.png" alt="">

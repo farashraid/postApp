@@ -6,7 +6,7 @@ import { Component, OnInit , Input, OnChanges, SimpleChange } from '@angular/cor
   styleUrls: ['./person.component.less']
 })
 export class PersonComponent implements OnInit {
-  
+  @Input() bgData;
   // private child2;
   @Input() child2: Wear;
   private personObj:Wear;
@@ -44,9 +44,14 @@ export class PersonComponent implements OnInit {
     };
   }
   ngOnChanges( changes: SimpleChange) { 
-    this.personObj = this.child2;
+    this.personObj = this.child2;    
   }
   ngDoCheck():void{
+    if(this.bgData){
+      console.log(this.bgData,'背景选择组建的数据==========')
+      this.personObj = this.bgData;
+    }
+
     if(this.personObj){
       if(this.personObj.click == 'suits'){
         this.personObj.coat.has = false;
@@ -67,6 +72,7 @@ export class PersonComponent implements OnInit {
       }
       console.log('数据变化了')
     }
+    
      
   }
   suits(){

@@ -16,17 +16,23 @@ export class ClothesSelectComponent implements OnInit {
 
   }
   private faList;
-  
+  private id;
+  private str;
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('id');
+//var str=encodeURI(JSON.stringify(data));
   }
   back(){
     this.router.navigate( ['home'] );
   }
   toSelectBg(){
-    this.router.navigate( ['bgSelect'] );
+    console.log(encodeURI(JSON.stringify(this.faList)),'stringifystringifystringify')
+    this.str = encodeURI(JSON.stringify(this.faList));
+    // this.router.navigate( ['bgSelect', { id:this.id }] );//传多个参数
+    this.router.navigate( ['bgSelect'],{queryParams:{'id':this.id,'obj':this.str}} );
   }
   getInfoFromChild1(data){
     this.faList= data;
+    console.log(data)
     }
 }
