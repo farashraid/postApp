@@ -9,7 +9,7 @@ export class BackgroundSelectComponent implements OnInit {
   private id;//性别
   private str;//人物衣服的对象
   private _str;//解码后的对象
-  private bgImgNumber;//背景图的bg
+  private bgImgNumber = 1;//背景图的bg
   
   constructor(
     private route: ActivatedRoute,
@@ -34,7 +34,7 @@ export class BackgroundSelectComponent implements OnInit {
   }
   getInfoFromBg(data){
     this.bgImgNumber = data;
-    console.log(this.bgImgNumber,'bgbgbgbgbgbgbgbgbgbgbgbgbg')
+    console.log(data,'bgbgbgbgbgbgbgbgbgbgbgbgbg')
   }
   backClothes(){
     this.router.navigate( ['clothes'] );

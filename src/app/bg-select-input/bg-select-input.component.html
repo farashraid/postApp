@@ -2,7 +2,7 @@
   <div class="left">
     <div>
       <span *ngFor="let item of bgArr"> 
-        <img [src]="item.src" alt="" (click)="selectBg(bgArr.id)">
+        <img [src]="item.src" alt="" (click)="selectBg(item.id)">
       </span>
       <!-- <img src="../../assets/background/select-bg-btn (1).png" alt="">
       <img src="../../assets/background/select-bg-btn (2).png" alt="">
