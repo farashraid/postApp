@@ -59,12 +59,7 @@
   <div *ngIf="personObj.gender ==2">
       <div class="mperson">
           <div *ngIf="personObj.hair.has">
-            <div *ngIf="personObj.hair.index !== 5">
-                <div class="hair" [style.background-image]="'url(' + '../../assets/hair/fhair'+ personObj.hair.index + '.png'+ ')'"></div>
-              </div>
-            <div *ngIf="personObj.hair.index == 5">
-                <div class="hair" [style.top] = "'-0.57rem'"  [style.background-image]="'url(' + '../../assets/hair/fhair'+ personObj.hair.index + '.png'+ ')'"></div>
-            </div>
+                <div class="hair" [style.background-image]="'url(' + '../../assets/hair/mhair'+ personObj.hair.index + '.png'+ ')'"></div>
            </div>
           <div *ngIf="personObj.shoes.has">
               <div class="shoes"  [style.background-image]="'url(' + '../../assets/shoes/fshoes'+ personObj.shoes.index + '.png'+ ')'"></div>
