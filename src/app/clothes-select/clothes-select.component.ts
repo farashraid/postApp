@@ -20,7 +20,6 @@ export class ClothesSelectComponent implements OnInit {
   private str;
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');//获取性别
-//var str=encodeURI(JSON.stringify(data));
   }
   back(){
     this.router.navigate( ['home'] );
@@ -33,6 +32,6 @@ export class ClothesSelectComponent implements OnInit {
   }
   getInfoFromChild1(data){
     this.faList= data;
-    console.log(data)
+
     }
 }

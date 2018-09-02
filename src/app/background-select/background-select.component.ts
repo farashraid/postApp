@@ -9,6 +9,7 @@ export class BackgroundSelectComponent implements OnInit {
   private id;//性别
   private str;//人物衣服的对象
   private _str;//解码后的对象
+  private bgImgNumber;//背景图的bg
   
   constructor(
     private route: ActivatedRoute,
@@ -27,10 +28,15 @@ export class BackgroundSelectComponent implements OnInit {
     if(this.str){
       this._str = JSON.parse(decodeURI(this.str));
     }
-   
-    console.log( this._str,'背景选择图')
+  }
+  ngDoCheck() {
+    
+  }
+  getInfoFromBg(data){
+    this.bgImgNumber = data;
+    console.log(this.bgImgNumber,'bgbgbgbgbgbgbgbgbgbgbgbgbg')
   }
   backClothes(){
-    // this.router.navigate( ['clothes',this.id] );
+    this.router.navigate( ['clothes'] );
   }
 }

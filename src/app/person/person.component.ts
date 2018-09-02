@@ -51,7 +51,6 @@ export class PersonComponent implements OnInit {
   ngDoCheck():void{
     console.log(this.personObj.gender,'gender--->')
     if(this.bgData){
-      console.log(this.bgData,'背景选择组建的数据==========')
       this.personObj = this.bgData;
     }
 
