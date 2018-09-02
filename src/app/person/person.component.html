@@ -1,26 +1,45 @@
 <div class="main">
   <div class="person">
     <div *ngIf="personObj.hair.has">
-        <div class="hair" [ngStyle]="{'background-image': 'url(' + '../../assets/hair/fhair'+ personObj.hair.index + '.png'+ ')'}"></div>
+      <div *ngIf="personObj.hair.index !== 5">
+          <div class="hair" [style.background-image]="'url(' + '../../assets/hair/fhair'+ personObj.hair.index + '.png'+ ')'"></div>
+        </div>
+      <div *ngIf="personObj.hair.index == 5">
+          <div class="hair" [style.top] = "'-0.57rem'"  [style.background-image]="'url(' + '../../assets/hair/fhair'+ personObj.hair.index + '.png'+ ')'"></div>
+      </div>
      </div>
-     <div *ngIf="personObj.coat.has">
+    <div *ngIf="personObj.shoes.has">
+        <div class="shoes"  [style.background-image]="'url(' + '../../assets/shoes/fshoes'+ personObj.shoes.index + '.png'+ ')'"></div>
+    </div>
+    <div *ngIf="personObj.suits.has">
+      {{this.personObj.suits.has}}
+      <div class="suits" [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div>
+    </div>
+
+    <div *ngIf="personObj.coat.has">
+    
         <div class="coats" [ngStyle]="{'background-image': 'url(' + '../../assets/coat/fcoats'+ personObj.coat.index + '.png'+ ')'}"></div>
      </div>
-    
-
-        <!-- <div class="hair1" *ngIf="child2[1] == 0 " >
-        </div> 
-        <div class="hair2" *ngIf="child2[1] == 1 " >
-          </div>  -->
+     <div *ngIf="personObj.pants.has">
+        <div class="pants" [style.background-image]="'url(' + '../../assets/pants/fpants'+ personObj.pants.index + '.png'+ ')'"></div>
+    </div>
+<!-- 
+    <div *ngIf="personObj.click == 'coat'">
+        <div class="jew" [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div>
+    </div>
+    <div *ngIf="!personObj.suits.has">
+        
+        
+    </div> -->
 
 
     
     <!-- <div [ngClass]="{'hair1': child2.index==1,'hair2': child2.index==2}" >
     </div> -->
-    <!-- <div class="pants"></div>
+    <!--
     <div class="coats"></div>
     <div class="jew"></div>
-    <div class="shoes"></div> -->
+     -->
     <!-- <img class="hair" src="../../assets/person/woman-hair.png" alt="">
     <img class="pants" src="../../assets/pants/mpants (1).png" alt=""> -->
     <!-- <div class="pants">

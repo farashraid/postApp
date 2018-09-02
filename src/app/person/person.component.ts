@@ -6,65 +6,15 @@ import { Component, OnInit , Input } from '@angular/core';
   styleUrls: ['./person.component.less']
 })
 export class PersonComponent implements OnInit {
-  @Input()
+  
   // private child2;
-  private child2: Wear= {
-    hair:{
-      has:true,
-      index:0,
-    },
-    jew:{
-      has:false,
-      index:0,
-    },
-    coat:{
-      has:true,
-      index:0,
-    },
-    suits:{
-      has:false,
-      index:0,
-    },
-    pants:{
-      has:true,
-      index:0,
-    },
-    shoes:{
-      has:true,
-      index:0,
-    }
-  };
-  private personObj:Wear= {
-    hair:{
-      has:true,
-      index:0,
-    },
-    jew:{
-      has:false,
-      index:0,
-    },
-    coat:{
-      has:true,
-      index:0,
-    },
-    suits:{
-      has:false,
-      index:0,
-    },
-    pants:{
-      has:true,
-      index:0,
-    },
-    shoes:{
-      has:true,
-      index:0,
-    }
-  };
+  @Input() child2: Wear;
+  private personObj:Wear;
   constructor() { }
 
   ngOnInit() {
-    console.log(this.child2)
     this.personObj =  {
+      click:'hair',
       hair:{
         has:true,
         index:0,
@@ -80,27 +30,54 @@ export class PersonComponent implements OnInit {
       suits:{
         has:false,
         index:0,
+        hasShoes:false,
+        hasJew:false
       },
       pants:{
-        has:true,
+        has:false,
         index:0,
       },
       shoes:{
-        has:true,
+        has:false,
         index:0,
       }
     };
   }
-  ngOnChanges(child2: Array<number> = [0, 0]) {
+  ngOnChanges( child2:Wear) {
+    
     this.personObj = this.child2;
-    this.dynamicStyles()
+    
+    // console.log( this.personObj,'suits==================')
+    if(this.personObj){
+      if(this.personObj.click == 'suits'){
+        this.personObj.coat.has = false;
+        this.personObj.pants.has = false; 
+          if(this.personObj.suits.hasShoes){
+            this.personObj.shoes.has = false;
+          }
+          if(this.personObj.suits.hasJew){
+            this.personObj.jew.has = false;
+          }
+         
+      }
+      if(this.personObj.click == 'coat'){
+        this.personObj.suits.has = false;
+      }
+      if(this.personObj.click == 'pants'){
+        this.personObj.suits.has = false;
+      }
+      console.log('数据变化了')
+    }
+     
+    this.suits();
   }
-  dynamicStyles(){
-    console.log('ngstyle')
+  suits(){
+  
   }
 
 }
 class Wear{
+  click:string;
   hair:{
     has:boolean,
     index:number,
@@ -116,6 +93,8 @@ class Wear{
   suits:{
     has:boolean,
     index:number,
+    hasShoes:boolean,
+    hasJew:boolean
   }
   pants:{
     has:boolean,

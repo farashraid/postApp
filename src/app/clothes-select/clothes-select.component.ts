@@ -19,7 +19,6 @@ export class ClothesSelectComponent implements OnInit {
   
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
-    console.log(id,'345')
   }
   back(){
     this.router.navigate( ['home'] );
@@ -29,6 +28,5 @@ export class ClothesSelectComponent implements OnInit {
   }
   getInfoFromChild1(data){
     this.faList= data;
-    console.log(data)
     }
 }
