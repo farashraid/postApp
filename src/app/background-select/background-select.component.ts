@@ -56,9 +56,6 @@ export class BackgroundSelectComponent implements OnInit {
   saveImg(){
     
     this.takeScreenShot();
-    if(this.canvasImg){
-      this.saveImgLocal()
-    }
   }
   takeScreenShot() {
     // 使用html2canvas插件，将数据源中的数据转换成画布。
@@ -67,6 +64,7 @@ export class BackgroundSelectComponent implements OnInit {
         canvas.style.width = "1000px";
         console.log(canvas, "生成的画布文件");
         this.canvasImg = canvas.toDataURL("image/png");
+        this.saveImgLocal()
     });
     // this.downloadFile("导出图片", this.canvasImg);
 }
