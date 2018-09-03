@@ -38,8 +38,41 @@ export class ClothesSelectComponent implements OnInit {
     this.router.navigate( ['home'] );
   }
   toSelectBg(){
+    if(!this.faList){
+      this.faList = {
+        gender:this.id,
+        click:'hair',
+        hair:{
+          has:true,
+          index:0,
+        },
+        jew:{
+          has:false,
+          index:0,
+        },
+        coat:{
+          has:true,
+          index:0,
+        },
+        suits:{
+          has:false,
+          index:0,
+          hasShoes:false,//多数套装是没有鞋子的
+          hasJew:false
+        },
+        pants:{
+          has:false,
+          index:0,
+        },
+        shoes:{
+          has:false,
+          index:0,
+        }
+      };
+    }
      const str = encodeURI(JSON.stringify(this.faList));
-    this.router.navigate( ['bgSelect'],{queryParams:{'id':this.id,'obj':str,'url':'clo'}} );
+
+      this.router.navigate( ['bgSelect'],{queryParams:{'id':this.id,'obj':str,'url':'clo'}} );//url代表自己身url
   }
   getInfoFromChild1(data){
     this.faList= data;

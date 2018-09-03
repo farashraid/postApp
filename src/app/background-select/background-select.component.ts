@@ -15,6 +15,7 @@ export class BackgroundSelectComponent implements OnInit {
   private getPost:boolean=false;//生成海报
   private name:string;
   private canvasImg='';
+  private url;//路由上一页传递过来的url
   
   constructor(
     private route: ActivatedRoute,
@@ -24,14 +25,14 @@ export class BackgroundSelectComponent implements OnInit {
   ngOnInit() {
     this.name = '';
     // this.id = this.route.snapshot.paramMap.get('id');
-
+    
     this.route.queryParams.subscribe(params => {
         this.id = params['id'];
         this.str = params['obj'];
-        // console.log(params,this.str ,'paramsparamsparams')
+        this.url = params['url'];
     });
-    // console.log( this.str,'背景选择图')
-    if(this.str){
+
+    if(this.url == 'clo'){ 
       this._str = JSON.parse(decodeURI(this.str));
     }
   }
@@ -40,7 +41,6 @@ export class BackgroundSelectComponent implements OnInit {
   }
   getInfoFromBg(data){
     this.bgImgNumber = data;
-    console.log(data,'bgbgbgbgbgbgbgbgbgbgbgbgbg')
   }
   backClothes(){
     const obj = encodeURI(JSON.stringify(this._str));
