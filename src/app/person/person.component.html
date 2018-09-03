@@ -59,36 +59,36 @@
   <div *ngIf="personObj.gender ==2">
       <div class="mperson">
           <div *ngIf="personObj.hair.has">
-                <div class="hair" [style.background-image]="'url(' + '../../assets/hair/mhair'+ personObj.hair.index + '.png'+ ')'"></div>
+                <div class="mhair" [style.background-image]="'url(' + '../../assets/hair/mhair'+ personObj.hair.index + '.png'+ ')'"></div>
            </div>
           <div *ngIf="personObj.shoes.has">
-              <div class="shoes"  [style.background-image]="'url(' + '../../assets/mshoes/mshoes'+ personObj.shoes.index + '.png'+ ')'"></div>
+              <div class="mshoes"  [style.background-image]="'url(' + '../../assets/mshoes/mshoes'+ personObj.shoes.index + '.png'+ ')'"></div>
           </div>
           <div *ngIf="personObj.suits.has">
             <div [ngSwitch]="personObj.suits.index">
             <div *ngSwitchCase="1">
-                <div class="suits"
+                <div class="msuits"
                 [style.top] =" '-0.03rem' "
                 [style.width] =" '102%' "
                 [style.left] =" '-0.03rem' "
                  [style.background-image]="'url(' + '../../assets/suits/msuits'+ personObj.suits.index + '.png'+ ')'"></div> 
             </div>
             <div *ngSwitchCase="2">
-                <div class="suits"
+                <div class="msuits"
                 [style.top] =" '-0.03rem' "
                 [style.width] =" '102%' "
                 [style.left] =" '-0.03rem' "
                  [style.background-image]="'url(' + '../../assets/suits/msuits'+ personObj.suits.index + '.png'+ ')'"></div> 
             </div>
             <div *ngSwitchCase="3">
-                <div class="suits"
+                <div class="msuits"
                 [style.top] =" '-0.03rem' "
                 [style.width] =" '102%' "
                 [style.left] =" '-0.03rem' "
                  [style.background-image]="'url(' + '../../assets/suits/msuits'+ personObj.suits.index + '.png'+ ')'"></div> 
               </div>
             <div *ngSwitchDefault>
-                <div class="suits" [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
+                <div class="msuits" [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
             </div>
             </div>
            
@@ -96,14 +96,14 @@
       
           <div *ngIf="personObj.coat.has">
           
-              <div class="coats" [ngStyle]="{'background-image': 'url(' + '../../assets/coat/mcoats'+ personObj.coat.index + '.png'+ ')'}"></div>
+              <div class="mcoats" [ngStyle]="{'background-image': 'url(' + '../../assets/coat/mcoats'+ personObj.coat.index + '.png'+ ')'}"></div>
            </div>
            <div *ngIf="personObj.pants.has">
              
-              <div class="pants" [style.background-image]="'url(' + '../../assets/mpants/mpants'+ personObj.pants.index + '.png'+ ')'"></div>
+              <div class="mpants" [style.background-image]="'url(' + '../../assets/mpants/mpants'+ personObj.pants.index + '.png'+ ')'"></div>
           </div>
           <div *ngIf="personObj.jew.has">
-              <div class="jew" [style.background-image]="'url(' + '../../assets/jew/fjew'+ personObj.jew.index + '.png'+ ')'"></div>
+              <div class="mjew" [style.background-image]="'url(' + '../../assets/jew/fjew'+ personObj.jew.index + '.png'+ ')'"></div>
           </div>
      
         </div>
