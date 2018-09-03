@@ -5,11 +5,13 @@
   <div class="middle"   id="mainTable">
     <div class="white" [style.background-image]="'url(' + '../../assets/background/bg'+ bgImgNumber + '.jpg'+ ')'">
       <!-- <input type="text"  #box (keyup)="onKey(box.value)"> -->
-      <div *ngIf="!getPost">
+      <div *ngIf="!getPost" >
           <input type="text"  #box (keyup)="onKey(box.value)">
       </div>
-      <div *ngIf="getPost">
-          <input type="text"  [value]="name" disabled>
+      <div *ngIf="getPost" >
+          <!-- <input type="text"  [value]="name" disabled> -->
+         <div class="nameshow"> {{name}}</div>
+          <!-- <input type="text"  [value]="name" #box (keyup)="onKey(box.value) " disabled> -->
       </div>
       <div class="erwei" *ngIf="getPost"></div>
       <div class="person">

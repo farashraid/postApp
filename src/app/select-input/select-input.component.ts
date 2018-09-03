@@ -59,16 +59,16 @@ export class SelectInputComponent implements OnInit {
       jewArr:[
         {src:'../../assets/jew/jew (1).png',id:'1'},
         {src:'../../assets/jew/jew (2).png',id:'2'},
-        {src:'../../assets/jew/jew (3).png',id:'3'},
-        {src:'../../assets/jew/jew (4).png',id:'4'},
+        // {src:'../../assets/jew/jew (3).png',id:'3'},
+        // {src:'../../assets/jew/jew (4).png',id:'4'},
         {src:'../../assets/jew/jew (5).png',id:'5'},
         {src:'../../assets/jew/jew (6).png',id:'6'},
         {src:'../../assets/jew/jew (7).png',id:'7'},
         {src:'../../assets/jew/jew (8).png',id:'8'},
         {src:'../../assets/jew/jew (9).png',id:'9'},
-        {src:'../../assets/jew/jew (10).png',id:'11'},
-        {src:'../../assets/jew/jew (11).png',id:'12'},
-        {src:'../../assets/jew/jew (12).png',id:'10'},
+        {src:'../../assets/jew/jew (10).png',id:'10'},
+        {src:'../../assets/jew/jew (11).png',id:'11'},
+        {src:'../../assets/jew/jew (12).png',id:'12'},
       ],
       coatArr:[
         {src:'../../assets/coat/coat (1).png',id:'1'},
@@ -164,16 +164,16 @@ export class SelectInputComponent implements OnInit {
       jewArr:[
         {src:'../../assets/jew/jew (1).png',id:'1'},
         {src:'../../assets/jew/jew (2).png',id:'2'},
-        {src:'../../assets/jew/jew (3).png',id:'3'},
-        {src:'../../assets/jew/jew (4).png',id:'4'},
+        // {src:'../../assets/jew/jew (3).png',id:'3'},
+        // {src:'../../assets/jew/jew (4).png',id:'4'},
         {src:'../../assets/jew/jew (5).png',id:'5'},
         {src:'../../assets/jew/jew (6).png',id:'6'},
         {src:'../../assets/jew/jew (7).png',id:'7'},
         {src:'../../assets/jew/jew (8).png',id:'8'},
         {src:'../../assets/jew/jew (9).png',id:'9'},
-        {src:'../../assets/jew/jew (10).png',id:'11'},
-        {src:'../../assets/jew/jew (11).png',id:'12'},
-        {src:'../../assets/jew/jew (12).png',id:'10'},
+        {src:'../../assets/jew/jew (10).png',id:'10'},
+        {src:'../../assets/jew/jew (11).png',id:'11'},
+        {src:'../../assets/jew/jew (12).png',id:'12'},
       ],
       coatArr:[
         {src:'../../assets/coat/mcoat (1).png',id:'1'},
@@ -249,20 +249,20 @@ export class SelectInputComponent implements OnInit {
     if(src.includes('hair')){
       this.obj.click = 'hair';
       this.obj.hair.has = true;//obj的第一位是种类的意思
-      this.obj.hair.index = i+1; //obj第二位是第几件衣服的意思
+      this.obj.hair.index = i; //obj第二位是第几件衣服的意思
       this.eventChild1.emit(this.obj);
     }
      if(src.includes('coat')){
       this.obj.click = 'coat';
       this.obj.coat.has = true;
-      this.obj.coat.index = i+1;
+      this.obj.coat.index = i;
       this.eventChild1.emit(this.obj);
     }
      if(src.includes('suits')){
 
       this.obj.click = 'suits';
       this.obj.suits.has = true;
-      this.obj.suits.index = i+1;
+      this.obj.suits.index = i;
       if(src.includes('4')){
         this.obj.suits.hasShoes = true;
         this.obj.suits.hasJew = true;
@@ -280,19 +280,19 @@ export class SelectInputComponent implements OnInit {
      if(src.includes('pants')){
       this.obj.click = 'pants';
       this.obj.pants.has = true;
-      this.obj.pants.index = i+1;
+      this.obj.pants.index = i;
       this.eventChild1.emit(this.obj);
     }
      if(src.includes('shoes')){
       this.obj.click = 'shoes';
       this.obj.shoes.has = true;
-      this.obj.shoes.index = i+1;
+      this.obj.shoes.index = i;
       this.eventChild1.emit(this.obj);
     }
     if(src.includes('jew')){
       this.obj.click = 'jew';
       this.obj.jew.has = true;
-      this.obj.jew.index = i+1;
+      this.obj.jew.index = i;
       this.eventChild1.emit(this.obj);
     }
     

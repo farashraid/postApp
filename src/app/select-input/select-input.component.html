@@ -52,10 +52,10 @@
               <img src="../../assets/btn/m-back.png" alt="">
             </div>
         </div>
-      <div class="img-name" *ngFor="let index of showArr;let i=index" (click)="change(index.src,i)">
+      <div class="img-name" *ngFor="let index of showArr;let i=index">
           <!-- <div class="img-name" *ngFor="let index of showArr;let i=index" (click)="change()"> -->
           <!-- <img src="../../assets/jew/jew (1).png" alt=""> -->
-          <img [src]="index.src" alt="">
+          <img  (click)="change(index.src,index.id)" [src]="index.src" alt="">
         </div>
         <div class="img-name" (click)=" id = 'top1'">
           <div *ngIf="obj.gender == 1">
