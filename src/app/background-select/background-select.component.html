@@ -2,7 +2,7 @@
   <div class="top">
       <img src="../../assets/background/select-top.png" alt="">
   </div>
-  <div class="middle">
+  <div class="middle"   id="mainTable">
     <div class="white" [style.background-image]="'url(' + '../../assets/background/bg'+ bgImgNumber + '.jpg'+ ')'">
       <!-- <input type="text"  #box (keyup)="onKey(box.value)"> -->
       <div *ngIf="!getPost">
@@ -49,7 +49,7 @@
             </div>
           
         </div>
-        <div class="born-btn">
+        <div class="born-btn" (click) = "saveImg()">
             <div *ngIf="id == 1">
                 <img src="../../assets/btn/f-save.png" alt="">
             </div>
@@ -62,4 +62,5 @@
   <div class="bottom">
       <img src="../../assets/background/select-bottom.png" alt="">
   </div>
+  <!-- <img src="{{canvasImg}}" /> -->
 </div>

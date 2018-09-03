@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import * as html2canvas from 'html2canvas';
+
 @Component({
   selector: 'app-background-select',
   templateUrl: './background-select.component.html',
@@ -12,6 +14,7 @@ export class BackgroundSelectComponent implements OnInit {
   private bgImgNumber = 1;//背景图的bg
   private getPost:boolean=false;//生成海报
   private name:string;
+  private canvasImg='';
   
   constructor(
     private route: ActivatedRoute,
@@ -49,5 +52,35 @@ export class BackgroundSelectComponent implements OnInit {
   onKey(value: string) {
     this.name = value
     console.log(value,'名字');
+  }
+  saveImg(){
+    
+    this.takeScreenShot();
+    if(this.canvasImg){
+      this.saveImgLocal()
+    }
+  }
+  takeScreenShot() {
+    // 使用html2canvas插件，将数据源中的数据转换成画布。
+    html2canvas(document.querySelector("#mainTable")).then(canvas => {
+        // 修改生成的宽度
+        canvas.style.width = "1000px";
+        console.log(canvas, "生成的画布文件");
+        this.canvasImg = canvas.toDataURL("image/png");
+    });
+    // this.downloadFile("导出图片", this.canvasImg);
+}
+  downloadFile(filename, content) {
+    var base64Img = content;
+    var oA = document.createElement('a');
+    oA.href = base64Img;
+    oA.download = filename;
+    var event = document.createEvent('MouseEvents');
+    event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+    oA.dispatchEvent(event);
+  }
+  // 方法调用
+  saveImgLocal() {
+    this.downloadFile("导出图片", this.canvasImg);
   }
 }
