@@ -14,27 +14,34 @@
           </div>
           <div *ngIf="personObj.suits.has">
             <div [ngSwitch]="personObj.suits.index">
-            <div *ngSwitchCase="4">
-                <div class="suits"
-                [style.top] =" '-0.03rem' "
-                [style.width] =" '102%' "
-                [style.left] =" '-0.03rem' "
+            <div *ngSwitchCase="25">
+                <div class="yuhangsuits"
+                
                  [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
             </div>
-            <div *ngSwitchCase="5">
-                <div class="suits"
-                [style.top] =" '-0.03rem' "
-                [style.width] =" '102%' "
-                [style.left] =" '-0.03rem' "
+            <div *ngSwitchCase="26">
+                <div class="yuhangsuits"
                  [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
             </div>
-            <div *ngSwitchCase="6">
-                <div class="suits"
-                [style.top] =" '-0.03rem' "
-                [style.width] =" '102%' "
-                [style.left] =" '-0.03rem' "
+            <div *ngSwitchCase="27">
+                <div class="yuhangsuits"
                  [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
               </div>
+
+              <div *ngSwitchCase="28">
+                    <div class="wuyisuits"
+                    
+                     [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
+                </div>
+                <div *ngSwitchCase="29">
+                    <div class="wuyisuits"
+                     [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
+                </div>
+                <div *ngSwitchCase="30">
+                    <div class="wuyisuits"
+                     [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
+                  </div>
+
             <div *ngSwitchDefault>
                 <div class="suits" [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
             </div>
@@ -65,33 +72,8 @@
               <div class="mshoes"  [style.background-image]="'url(' + '../../assets/mshoes/mshoes'+ personObj.shoes.index + '.png'+ ')'"></div>
           </div>
           <div *ngIf="personObj.suits.has">
-            <div [ngSwitch]="personObj.suits.index">
-            <div *ngSwitchCase="1">
                 <div class="msuits"
-                [style.top] =" '-0.03rem' "
-                [style.width] =" '102%' "
-                [style.left] =" '-0.03rem' "
-                 [style.background-image]="'url(' + '../../assets/suits/msuits'+ personObj.suits.index + '.png'+ ')'"></div> 
-            </div>
-            <div *ngSwitchCase="2">
-                <div class="msuits"
-                [style.top] =" '-0.03rem' "
-                [style.width] =" '102%' "
-                [style.left] =" '-0.03rem' "
-                 [style.background-image]="'url(' + '../../assets/suits/msuits'+ personObj.suits.index + '.png'+ ')'"></div> 
-            </div>
-            <div *ngSwitchCase="3">
-                <div class="msuits"
-                [style.top] =" '-0.03rem' "
-                [style.width] =" '102%' "
-                [style.left] =" '-0.03rem' "
-                 [style.background-image]="'url(' + '../../assets/suits/msuits'+ personObj.suits.index + '.png'+ ')'"></div> 
-              </div>
-            <div *ngSwitchDefault>
-                <div class="msuits" [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div> 
-            </div>
-            </div>
-           
+                 [style.background-image]="'url(' + '../../assets/suits/msuits'+ personObj.suits.index + '.png'+ ')'"></div>
           </div>
       
           <div *ngIf="personObj.coat.has">

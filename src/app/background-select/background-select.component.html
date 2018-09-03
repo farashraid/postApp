@@ -6,7 +6,7 @@
     <div class="white" [style.background-image]="'url(' + '../../assets/background/bg'+ bgImgNumber + '.jpg'+ ')'">
       <!-- <input type="text"  #box (keyup)="onKey(box.value)"> -->
       <div *ngIf="!getPost" >
-          <input type="text"  #box (keyup)="onKey(box.value)">
+          <input type="text" placeholder="您的姓名" #box (keyup)="onKey(box.value)">
       </div>
       <div *ngIf="getPost" >
           <!-- <input type="text"  [value]="name" disabled> -->
