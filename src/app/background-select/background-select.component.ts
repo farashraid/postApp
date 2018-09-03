@@ -13,7 +13,7 @@ export class BackgroundSelectComponent implements OnInit {
   private _str;//解码后的对象
   private bgImgNumber = 1;//背景图的bg
   private getPost:boolean=false;//生成海报
-  private name:string;
+  private name:string = '';
   private canvasImg='';
   private url;//路由上一页传递过来的url
   
@@ -79,6 +79,6 @@ export class BackgroundSelectComponent implements OnInit {
   }
   // 方法调用
   saveImgLocal() {
-    this.downloadFile("导出图片", this.canvasImg);
+    this.downloadFile("川农人"+this.name, this.canvasImg);
   }
 }
