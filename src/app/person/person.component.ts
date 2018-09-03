@@ -36,7 +36,7 @@ export class PersonComponent implements OnInit {
         hasJew:false
       },
       pants:{
-        has:false,
+        has:true,
         index:0,
       },
       shoes:{
