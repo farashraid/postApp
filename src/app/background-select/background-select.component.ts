@@ -16,6 +16,7 @@ export class BackgroundSelectComponent implements OnInit {
   private name: string = "";
   private canvasImg = "";
   private url; //路由上一页传递过来的url
+  private longPutImg: boolean = false;//长按图片保存
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -50,16 +51,18 @@ export class BackgroundSelectComponent implements OnInit {
     console.log(value, "名字");
   }
   saveImg() {
+    this.longPutImg = true;
     this.takeScreenShot();
   }
   takeScreenShot() {
     // 使用html2canvas插件，将数据源中的数据转换成画布。
     html2canvas(document.querySelector("#mainTable")).then(canvas => {
       // 修改生成的宽度
-      canvas.style.width = "1000px";
+      canvas.style.width = "450px";
+      canvas.style.height = "720px";
       console.log(canvas, "生成的画布文件");
       this.canvasImg = canvas.toDataURL("image/png");
-      this.saveImgLocal();
+      // this.saveImgLocal();
     });
     // this.downloadFile("导出图片", this.canvasImg);
   }
