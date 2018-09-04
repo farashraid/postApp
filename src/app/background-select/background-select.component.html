@@ -1,69 +1,65 @@
 <div class="main">
-  <div class="top">
-      <img src="../../assets/background/select-top.png" alt="">
-  </div>
-  <div class="middle"   id="mainTable">
-    <div class="white" [style.background-image]="'url(' + '../../assets/background/bg'+ bgImgNumber + '.jpg'+ ')'">
-      <!-- <input type="text"  #box (keyup)="onKey(box.value)"> -->
-      <div *ngIf="!getPost" >
-          <input type="text" maxlength="6" placeholder="输入我的名字" #box (keyup)="onKey(box.value)">
-      </div>
-      <div *ngIf="getPost" >
-          <!-- <input type="text"  [value]="name" disabled> -->
-         <!-- <div class="nameshow"> </div> -->
-         <button value="">{{name}}</button>
-          <!-- <input type="text"  [value]="name" #box (keyup)="onKey(box.value) " disabled> -->
-      </div>
-      <div class="erwei" *ngIf="getPost"></div>
-      <div class="person">
-        <app-person [bgData] = '_str'></app-person>
-      </div>
+    <div class="top">
+        <img src="../../assets/background/select-top.png" alt="">
     </div>
-  </div>
-  <div class="select-input">
-    <div *ngIf="!getPost">
-        <div class="left-btn" (click)="backClothes()">
-            <div *ngIf="id == 1">
-                <img src="../../assets/btn/f-back.png" alt="">
+    <div class="middle" id="mainTable">
+        <div class="white" [style.background-image]="'url(' + '../../assets/background/bg'+ bgImgNumber + '.jpg'+ ')'">
+            <div *ngIf="!getPost">
+                <input type="text" maxlength="6" placeholder="输入我的名字" #box (keyup)="onKey(box.value)">
             </div>
-            <div *ngIf="id == 2">
-                <img src="../../assets/btn/m-back.png" alt="">
+            <div *ngIf="getPost">
+                <button value="">{{name}}</button>
             </div>
-          </div>
-          <div class="bg-slide">
-            <app-bg-select-input (eventbg)="getInfoFromBg($event)"></app-bg-select-input>
-          </div>
-          <div class="right-btn" (click)="bornPost()">
-              <div *ngIf="id == 1">
-                  <img src="../../assets/btn/f-born.png" alt="">
-              </div>
-              <div *ngIf="id == 2">
-                  <img src="../../assets/btn/m-born.png" alt="">
-              </div>
-          </div>
-    </div>
-    <div *ngIf="getPost">
-        <div class="back-btn" (click)="backClothes()">
-            <div *ngIf="id == 1">
-                <img src="../../assets/btn/f-back.png" alt="">
-            </div>
-            <div *ngIf="id == 2">
-                <img src="../../assets/btn/m-back.png" alt="">
-            </div>
-          
-        </div>
-        <div class="born-btn" (click) = "saveImg()">
-            <div *ngIf="id == 1">
-                <img src="../../assets/btn/f-save.png" alt="">
-            </div>
-            <div *ngIf="id == 2">
-                <img src="../../assets/btn/m-save.png" alt="">
+            <div class="erwei" *ngIf="getPost"></div>
+            <div class="person">
+                <app-person [bgData]='_str'></app-person>
             </div>
         </div>
     </div>
-  </div>
-  <div class="bottom">
-      <img src="../../assets/background/select-bottom.png" alt="">
-  </div>
-  <!-- <img src="{{canvasImg}}" /> -->
+    <div class="select-input">
+        <div *ngIf="!getPost">
+            <div class="left-btn" (click)="backClothes()">
+                <div *ngIf="id == 1">
+                    <img src="../../assets/btn/f-back.png" alt="">
+                </div>
+                <div *ngIf="id == 2">
+                    <img src="../../assets/btn/m-back.png" alt="">
+                </div>
+            </div>
+            <div class="bg-slide">
+                <app-bg-select-input (eventbg)="getInfoFromBg($event)"></app-bg-select-input>
+            </div>
+            <div class="right-btn" (click)="bornPost()">
+                <div *ngIf="id == 1">
+                    <img src="../../assets/btn/f-born.png" alt="">
+                </div>
+                <div *ngIf="id == 2">
+                    <img src="../../assets/btn/m-born.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div *ngIf="getPost">
+            <div class="back-btn" (click)="backClothes()">
+                <div *ngIf="id == 1">
+                    <img src="../../assets/btn/f-back.png" alt="">
+                </div>
+                <div *ngIf="id == 2">
+                    <img src="../../assets/btn/m-back.png" alt="">
+                </div>
+
+            </div>
+            <div class="born-btn" (click)="saveImg()">
+                <div *ngIf="id == 1">
+                    <img src="../../assets/btn/f-save.png" alt="">
+                </div>
+                <div *ngIf="id == 2">
+                    <img src="../../assets/btn/m-save.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <img src="../../assets/background/select-bottom.png" alt="">
+    </div>
+    <!-- <img src="{{canvasImg}}" /> -->
 </div>

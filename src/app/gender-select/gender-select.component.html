@@ -1,8 +1,12 @@
-
 <div class="main">
+  <ngx-smart-loader identifier="myLoader">
+    <div class="loader">
+      <div class="circle"></div>
+    </div>
+  </ngx-smart-loader>
   <div class="top"></div>
   <div class="person">
-    <div class="left-person"  (click)="toggleImage(2)">
+    <div class="left-person" (click)="toggleImage(2)">
       <img src="../../assets/background/man-1.png" alt="">
     </div>
     <div class="right-person" (click)="toggleImage(1)">
@@ -14,7 +18,7 @@
       <img src="../../assets/background/btn1.png" alt="">
     </div>
     <div class="r-btn" (click)="toggleImage(1)">
-        <img src="../../assets/background/btn2.png" alt="">
+      <img src="../../assets/background/btn2.png" alt="">
     </div>
   </div>
   <div class="bottom">
