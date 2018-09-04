@@ -2,11 +2,11 @@
     <div *ngIf="personObj.gender ==1">
         <div class="person">
             <div *ngIf="personObj.hair.has">
-                <div *ngIf="personObj.hair.index !== 5">
+                <div *ngIf="personObj.hair.index !== '5'">
                     <div class="hair" [style.background-image]="'url(' + '../../assets/hair/fhair'+ personObj.hair.index + '.png'+ ')'"></div>
                 </div>
-                <div *ngIf="personObj.hair.index == 5">
-                    <div class="hair" [style.top]="'-0.57rem'" [style.background-image]="'url(' + '../../assets/hair/fhair'+ personObj.hair.index + '.png'+ ')'"></div>
+                <div *ngIf="personObj.hair.index == '5'">
+                    <div class="hair" [style.top]="'-0.70rem'" [style.height]="'105%'" [style.background-image]="'url(' + '../../assets/hair/fhair'+ personObj.hair.index + '.png'+ ')'"></div>
                 </div>
             </div>
             <div *ngIf="personObj.shoes.has">
