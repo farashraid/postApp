@@ -1,9 +1,5 @@
 <div class="main">
-  <ngx-smart-loader identifier="myLoader">
-    <div class="loader">
-      <div class="circle"></div>
-    </div>
-  </ngx-smart-loader>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
   <div class="top"></div>
   <div class="person">
     <div class="left-person" (click)="toggleImage(2)">

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgxSmartLoaderModule, NgxSmartLoaderService } from 'ngx-smart-loader';
+import { LoadingModule } from 'ngx-loading';
 
 import { AppComponent } from './app.component';
 import { PersonComponent } from './person/person.component';
@@ -31,14 +31,14 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    NgxSmartLoaderModule.forRoot(),
+    LoadingModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
     // AppRoutingModule
   ],
-  providers: [NgxSmartLoaderService ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

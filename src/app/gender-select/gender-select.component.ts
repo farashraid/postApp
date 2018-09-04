@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
-import { NgxSmartLoaderService } from "ngx-smart-loader";
 @Component({
   selector: "app-gender-select",
   templateUrl: "./gender-select.component.html",
@@ -10,14 +9,18 @@ export class GenderSelectComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    public loader: NgxSmartLoaderService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+
   ) {}
+  public loading = false;
   ngAfterViewInit() {
     this.cdr.detectChanges();
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000);
   }
   ngOnInit() {
-    this.loader.start("myLoader");
+    this.loading = true;
   }
   toggleImage(id) {
     this.router.navigate(["clothes"], {
