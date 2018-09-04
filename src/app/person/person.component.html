@@ -14,6 +14,9 @@
             </div>
             <div *ngIf="personObj.suits.has">
                 <div [ngSwitch]="personObj.suits.index">
+                    <div *ngSwitchCase="22">
+                        <div class="chibangsuits" [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div>
+                    </div>
                     <div *ngSwitchCase="25">
                         <div class="yuhangsuits" [style.background-image]="'url(' + '../../assets/suits/fsuits'+ personObj.suits.index + '.png'+ ')'"></div>
                     </div>
