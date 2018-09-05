@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\r\nbody, html{\r\n    margin:0;\r\n    height: 100%;\r\n    background-color: #f3cf2e;\r\n    font-family: '黑体';\r\n}"
+module.exports = "/* You can add global styles to this file, and also import other style files */\nbody, html{\n    margin:0;\n    height: 100%;\n    background-color: #f3cf2e;\n    font-family: '黑体';\n}"
 
 /***/ }),
 
@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Program Files\nodejs\post\postApp\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! D:\Program Files\angular4\post\src\styles.css */"./src/styles.css");
 
 
 /***/ })

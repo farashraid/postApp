@@ -1,8 +1,5 @@
-
-
-
-
 <html lang="zh-CN">
+
 <head>
     <base href="/">
     <meta charset="utf-8">
@@ -13,88 +10,97 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a59ea23efe4c64b379fb2f6d90ac5f67";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
         (function (win, lib) {
-    var doc = win.document;
-    var docEl = doc.documentElement;
+            var doc = win.document;
+            var docEl = doc.documentElement;
 
-    var devicePixelRatio = win.devicePixelRatio;
-    var dpr = 1; // 物理像素与逻辑像素的对应关系
-    var scale = 1; // css像素缩放比率
-    // 设置viewport
-    function setViewport() {
-        var isIPhone = !!win.navigator.appVersion.match(/iphone/gi);
-        dpr = devicePixelRatio;
-        win.devicePixelRatioValue = dpr;
-        scale = 1 / dpr;
+            var devicePixelRatio = win.devicePixelRatio;
+            var dpr = 1; // 物理像素与逻辑像素的对应关系
+            var scale = 1; // css像素缩放比率
+            // 设置viewport
+            function setViewport() {
+                var isIPhone = !!win.navigator.appVersion.match(/iphone/gi);
+                dpr = devicePixelRatio;
+                win.devicePixelRatioValue = dpr;
+                scale = 1 / dpr;
 
-        var hasMetaEl = doc.querySelector('meta[name="viewport"]');
-        if (hasMetaEl) {
-            if (isIPhone) {
-                hasMetaEl.setAttribute('content', 'initial-scale=' + scale + ', user-scalable=no');
-            }
-            else {
-                hasMetaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no,target-densitydpi=device-dpi');
-            }
-            
-        }
-        else {
-            var metaEl = doc.createElement('meta');
-            metaEl.setAttribute('name', 'viewport');
-            if (isIPhone) { 
-                metaEl.setAttribute('content', 'initial-scale=' + scale + ', user-scalable=no');
-            }
-            else {
-                metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no,target-densitydpi=device-dpi');
-            }
-            
-            if (docEl.firstElementChild) {
-                docEl.firstElementChild.appendChild(metaEl);
-            }
-            else {
-                var wrap = doc.createElement('div');
-                wrap.appendChild(metaEl);
-                doc.write(wrap.innerHTML);
-            }
-        }
-    }
-    setViewport();
-    var newBase = 100;
+                var hasMetaEl = doc.querySelector('meta[name="viewport"]');
+                if (hasMetaEl) {
+                    if (isIPhone) {
+                        hasMetaEl.setAttribute('content', 'initial-scale=' + scale + ', user-scalable=no');
+                    }
+                    else {
+                        hasMetaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no,target-densitydpi=device-dpi');
+                    }
 
-    function setRem() {
-        var visualView = Math.min(docEl.getBoundingClientRect().width, 540 * win.devicePixelRatioValue); // visual viewport
-        newBase = 100 * visualView / lib.desinWidth;
-        docEl.style.fontSize = newBase + 'px';
-    }
-    var tid;
-    lib.desinWidth = 640;
-    lib.baseFont = 18;
-    lib.init = function () {
-        win.addEventListener('resize', function () {
-            clearTimeout(tid);
-            tid = setTimeout(setRem, 300);
-        }, false);
-        /*win.addEventListener('onorientationchange', function () {
-            clearTimeout(tid);
-            tid = setTimeout(setRem, 300);
-        }, false);*/
-        win.addEventListener('pageshow', function (e) {
-            if (e.persisted) {
-                clearTimeout(tid);
-                tid = setTimeout(setRem, 300);
+                }
+                else {
+                    var metaEl = doc.createElement('meta');
+                    metaEl.setAttribute('name', 'viewport');
+                    if (isIPhone) {
+                        metaEl.setAttribute('content', 'initial-scale=' + scale + ', user-scalable=no');
+                    }
+                    else {
+                        metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no,target-densitydpi=device-dpi');
+                    }
+
+                    if (docEl.firstElementChild) {
+                        docEl.firstElementChild.appendChild(metaEl);
+                    }
+                    else {
+                        var wrap = doc.createElement('div');
+                        wrap.appendChild(metaEl);
+                        doc.write(wrap.innerHTML);
+                    }
+                }
             }
-        }, false);
-        if (doc.readyState === 'complete') {
-            doc.body.style.fontSize = lib.baseFont * dpr + 'px';
-        }
-        else {
-            doc.addEventListener('DOMContentLoaded', function (e) {
-                doc.body.style.fontSize = lib.baseFont * dpr + 'px';
-            }, false);
-        }
-        setRem();
-        docEl.setAttribute('data-dpr', dpr);
-    };
-})(window, window['adaptive'] || (window['adaptive'] = {}));
+            setViewport();
+            var newBase = 100;
+
+            function setRem() {
+                var visualView = Math.min(docEl.getBoundingClientRect().width, 540 * win.devicePixelRatioValue); // visual viewport
+                newBase = 100 * visualView / lib.desinWidth;
+                docEl.style.fontSize = newBase + 'px';
+            }
+            var tid;
+            lib.desinWidth = 640;
+            lib.baseFont = 18;
+            lib.init = function () {
+                win.addEventListener('resize', function () {
+                    clearTimeout(tid);
+                    tid = setTimeout(setRem, 300);
+                }, false);
+                /*win.addEventListener('onorientationchange', function () {
+                    clearTimeout(tid);
+                    tid = setTimeout(setRem, 300);
+                }, false);*/
+                win.addEventListener('pageshow', function (e) {
+                    if (e.persisted) {
+                        clearTimeout(tid);
+                        tid = setTimeout(setRem, 300);
+                    }
+                }, false);
+                if (doc.readyState === 'complete') {
+                    doc.body.style.fontSize = lib.baseFont * dpr + 'px';
+                }
+                else {
+                    doc.addEventListener('DOMContentLoaded', function (e) {
+                        doc.body.style.fontSize = lib.baseFont * dpr + 'px';
+                    }, false);
+                }
+                setRem();
+                docEl.setAttribute('data-dpr', dpr);
+            };
+        })(window, window['adaptive'] || (window['adaptive'] = {}));
     </script>
     <script>
         window['adaptive'].desinWidth = 750;
@@ -105,31 +111,33 @@
     <style type="text/css">
         .div-1px {
             width: 80%;
-            height: 4rem; 
+            height: 4rem;
             margin: 1rem auto;
             border: 1px solid #333;
         }
+
         .hairlines .div-1px {
             border: .5px solid #0a55bc;
         }
     </style>
 </head>
+
 <body>
     <app-root></app-root>
 </body>
 <script>
-(function() {
-    var isIPhone = !!window.navigator.appVersion.match(/iphone/gi);
-    if (isIPhone && devicePixelRatio === 2) {
-        var testElem = document.createElement('div');
-        testElem.style.border = '.5px solid transparent';
-        document.body.appendChild(testElem);
-        if (testElem.offsetHeight == 1)
-        {
-            document.querySelector('html').classList.add('hairlines');
+    (function () {
+        var isIPhone = !!window.navigator.appVersion.match(/iphone/gi);
+        if (isIPhone && devicePixelRatio === 2) {
+            var testElem = document.createElement('div');
+            testElem.style.border = '.5px solid transparent';
+            document.body.appendChild(testElem);
+            if (testElem.offsetHeight == 1) {
+                document.querySelector('html').classList.add('hairlines');
+            }
+            document.body.removeChild(testElem);
         }
-        document.body.removeChild(testElem);
-    }
-})();
+    })();
 </script>
+
 </html>
