@@ -9,7 +9,7 @@
         <div *ngIf="!longPutImg">
             <div class="white" [style.background-image]="'url(' + '../../assets/background/bg'+ bgImgNumber + '.jpg'+ ')'" id="mainTable">
                 <div *ngIf="!getPost">
-                    <input type="text" maxlength="6" placeholder="输入我的名字" #box (keyup)="onKey(box.value)">
+                    <input type="text" maxlength="6" placeholder="输入我的名字" #box (input)="onKey(box.value)">
                 </div>
                 <div *ngIf="getPost">
                     <button value="">{{name}}</button>
